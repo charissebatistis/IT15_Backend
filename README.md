@@ -1,59 +1,170 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# IT15_Backend
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Student Information System with Attendance Tracking
 
-## About Laravel
+## 5. Submission Guidelines
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 5.1 Required Deliverables
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#### GitHub Repository
+- ✅ Complete source code for both frontend and backend
+- ✅ Detailed README.md with setup instructions
+- ✅ .env.example file with required environment variables
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+#### Documentation
+- Screenshots of the working application (minimum 5)
+- API documentation (endpoints and expected responses)
+- List of technologies used with versions
+- 3–5 minute video demonstration
 
-## Learning Laravel
+---
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+### 5.2 Setup Instructions
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+#### Backend Setup
+```bash
+cd IT15_Backend
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate --seed
+php artisan serve
+```
 
-## Laravel Sponsors
+#### Frontend Setup
+```bash
+cd IT15_Frontend
+npm install
+npm start
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## Backend Features
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Database Seeders
+- **StudentSeeder**: 550 students with demographic information
+- **CourseSeeder**: 20 courses across multiple departments
+- **SchoolDaySeeder**: 6-month academic calendar with holidays and events
+- **AttendanceSeeder**: Automated attendance records
 
-## Contributing
+### API Endpoints
+- Authentication (Login/Logout)
+- Student management
+- Course management
+- Dashboard statistics
+- Attendance tracking
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Technologies Used
+- **Framework**: Laravel 11
+- **Database**: MySQL 8.0
+- **Authentication**: Laravel Sanctum
+- **PHP Version**: 8.2+
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Project Structure
 
-## Security Vulnerabilities
+```
+IT15_Backend/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   └── Resources/
+│   ├── Models/
+│   └── Providers/
+├── database/
+│   ├── migrations/
+│   ├── seeders/
+│   └── factories/
+├── routes/
+│   ├── api.php
+│   ├── web.php
+│   └── console.php
+├── config/
+├── storage/
+├── tests/
+└── .env.example
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+---
+
+## Getting Started
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/charissebatistis/IT15_Backend.git
+```
+
+2. **Install dependencies**
+```bash
+composer install
+```
+
+3. **Configure environment**
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+4. **Run migrations with seeders**
+```bash
+php artisan migrate --seed
+```
+
+5. **Start the server**
+```bash
+php artisan serve
+```
+
+Server will run at `http://localhost:8000`
+
+---
+
+## API Documentation
+
+### Authentication
+- `POST /api/login` - User login
+- `POST /api/logout` - User logout
+- `GET /api/user` - Get current user
+
+### Students
+- `GET /api/students` - List all students
+- `GET /api/students/{id}` - Get student details
+- `GET /api/students/course/{courseId}` - Get students by course
+
+### Courses
+- `GET /api/courses` - List all courses
+- `GET /api/courses/{id}` - Get course details
+- `GET /api/courses/department/{department}` - Get courses by department
+
+### Dashboard
+- `GET /api/dashboard/stats` - Overall statistics
+- `GET /api/dashboard/enrollment-trend` - Enrollment trends
+- `GET /api/dashboard/attendance-trend` - Attendance statistics
+
+---
+
+## Environment Variables (.env.example)
+
+```env
+APP_NAME=IT15_Backend
+APP_ENV=local
+APP_DEBUG=true
+APP_URL=http://localhost:8000
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=it15_backend
+DB_USERNAME=root
+DB_PASSWORD=
+
+SANCTUM_STATEFUL_DOMAINS=localhost:3000
+```
+
+---
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is part of IT15 coursework.
