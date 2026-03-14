@@ -7,9 +7,9 @@ Student Information System with Attendance Tracking
 ### 5.1 Required Deliverables
 
 #### GitHub Repository
-- ✅ Complete source code for both frontend and backend
-- ✅ Detailed README.md with setup instructions
-- ✅ .env.example file with required environment variables
+ Complete source code for both frontend and backend
+ Detailed README.md with setup instructions
+.env.example file with required environment variables
 
 #### Documentation
 - Screenshots of the working application (minimum 5)
@@ -55,7 +55,7 @@ npm start
 - Dashboard statistics
 - Attendance tracking
 
-### Technologies Used
+## Technologies Used
 - **Framework**: Laravel 11
 - **Database**: MySQL 8.0
 - **Authentication**: Laravel Sanctum
