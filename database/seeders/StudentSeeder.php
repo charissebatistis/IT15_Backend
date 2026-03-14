@@ -33,7 +33,6 @@ class StudentSeeder extends Seeder
                       'Richard', 'Susan', 'Joseph', 'Jessica', 'Thomas', 'Sarah', 'Charles', 'Karen', 'Christopher', 'Nancy',
                       'Mark', 'Lisa', 'Donald', 'Betty', 'Steven', 'Margaret', 'Paul', 'Sandra', 'Andrew', 'Ashley',
                       'Joshua', 'Kimberly', 'Kenneth', 'Donna', 'Kevin', 'Emily', 'Brian', 'Melissa', 'George', 'Deborah',
-                      'Edward', 'Stephanie', 'Ronald', 'Rebecca', 'Anthony', 'Sharon', 'Frank', 'Laura', 'Ryan', 'Cynthia');
                       'Edward', 'Stephanie', 'Ronald', 'Rebecca', 'Anthony', 'Sharon', 'Frank', 'Laura', 'Ryan', 'Cynthia'];
         
         $lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 'Rodriguez', 'Martinez',
